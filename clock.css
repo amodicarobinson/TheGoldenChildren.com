@@ -1,0 +1,19 @@
+.clock{
+  background: white;
+  width: 200px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+.clock-time,
+.clock-ampm{
+  font-family: 'Stick No Bills', sans-serif;
+  font-size: 30px;
+  color: #FFD700;
+}
+.clock-ampm{
+  font-size: 12px;
+}
