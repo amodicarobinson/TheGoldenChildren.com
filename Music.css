@@ -1,0 +1,65 @@
+body{
+
+}
+.project1{
+border-style: dashed;
+border-radius: 1px black;
+width:20%;
+position:relative;
+left:0%;
+display: inline-block;
+margin-right: 60px;
+margin-left: 60px;
+text-align: center;
+}
+
+.project2{
+  border-style: dashed;
+  border-radius: 1px black;
+  width:20%;
+  margin-bottom: 50px;
+  position:relative;
+  display: inline-block;
+  margin-right: 60px;
+  text-align: center;
+}
+
+.project3{
+  border-style: dashed;
+  border-radius: 1px black;
+  width:20%;
+  position:relative;
+  margin-right: 60px;
+  display: inline-block;
+  text-align: center;
+}
+
+.project4{
+  border-style: dashed;
+  border-radius: 1px black;
+  width:20%;
+  position:relative;
+  display: inline-block;
+  text-align: center;
+}
+
+a{
+  color: inherit;
+  text-decoration: inherit;
+  font-size: 24px;
+}
+.project1 a:hover,
+.project2 a:hover,
+.project3 a:hover,
+.project4 a:hover{
+  color: #FFD700;
+  text-decoration: inherit;
+}
+
+.playlist{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%
+
+}
