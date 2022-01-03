@@ -22,3 +22,30 @@ article p{
   font-size: 24px;
   font-weight: bold;
 }
+ .logo{
+   height: 50px;
+   width: 50px;
+ }
+.socials{
+font-size: 24px;
+font-weight: bold;
+color: #FFD700;
+background-color: black;
+width: 40%;
+list-style-type: none;
+}
+
+.socials ul li{
+  list-style-type: none;
+  padding-bottom: 10px;
+}
+
+.WebContainer{
+    width: 100%;
+    height: auto;
+}
+.articles{
+    width:90%; /*Takes 90% width from WebContainer*/
+    height: auto;
+    margin: auto;
+}
