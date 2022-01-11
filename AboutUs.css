@@ -16,34 +16,54 @@ article{
 article h1{
 text-decoration: line-through;
 font-size: 50px;
+color: #FFD700;
+text-shadow: 1px 1px 1px black;
 }
 
 article p{
-  font-size: 24px;
-  font-weight: bold;
-}
- .logo{
-   height: 50px;
-   width: 50px;
- }
-.socials{
 font-size: 24px;
 font-weight: bold;
-color: #FFD700;
-background-color: black;
-width: 40%;
+}
+
+.logo{
+height: 50px;
+width: 50px;
+display: inline-block;
+}
+
+.socials{
+width: 70%;
 list-style-type: none;
+
+border-radius: 50px;
+position:relative;
+left: 15%;
+box-shadow: 1px 1px 5px 5px;
 }
 
 .socials ul li{
-  list-style-type: none;
-  padding-bottom: 10px;
+list-style-type: none;
+padding-bottom: 10px;
+display: inline-block;
+margin-right: 20px;
+}
+
+.socials a{
+color: #FFD700;
+font-weight:bold;
+font-size: 24px;
+text-decoration: none;
+}
+
+.socials a:hover {
+text-shadow: 1px 1px 1px black;
 }
 
 .WebContainer{
     width: 100%;
     height: auto;
 }
+
 .articles{
     width:90%; /*Takes 90% width from WebContainer*/
     height: auto;
