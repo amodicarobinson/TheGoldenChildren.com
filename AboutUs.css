@@ -41,6 +41,11 @@ left: 15%;
 box-shadow: 1px 1px 5px 5px;
 }
 
+.socials h1{
+color: #FFD700;
+text-shadow: 1px 1px 1px black;
+}
+
 .socials ul li{
 list-style-type: none;
 padding-bottom: 10px;
