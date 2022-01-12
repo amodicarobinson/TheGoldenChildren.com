@@ -67,6 +67,5 @@ text-shadow: 1px 1px 2px black;
 
 @media only screen and (max-width: 600px) {
   body {
-    background-color: black;
   }
 }
