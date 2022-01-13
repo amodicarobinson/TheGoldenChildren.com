@@ -1,7 +1,9 @@
+/* Styles the body */
 body{
 
 }
 
+/* Stles the header */
 .center{
   display: block;
   margin-left: auto;
@@ -9,10 +11,12 @@ body{
   width: 50%;
 }
 
+/* Styles the main article  */
 article{
   text-align: left;
 }
 
+/* Styles the h1 within the article element */
 article h1{
 text-decoration: line-through;
 font-size: 50px;
@@ -20,32 +24,40 @@ color: #FFD700;
 text-shadow: 1px 1px 1px black;
 }
 
+/* Styles the paragraph element
+    of the article */
 article p{
 font-size: 24px;
 font-weight: bold;
 }
 
+/* Resizes the pictures for the
+    the logo images */
 .logo{
 height: 50px;
 width: 50px;
 display: inline-block;
 }
 
+/* Styles the class to align social
+    media */
 .socials{
 width: 70%;
 list-style-type: none;
-
 border-radius: 50px;
 position:relative;
 left: 15%;
 box-shadow: 1px 1px 5px 5px;
 }
 
+/* Styles the heading in socials */
 .socials h1{
 color: #FFD700;
 text-shadow: 1px 1px 1px black;
 }
 
+/* Styles the list and list elements
+    in socails  */
 .socials ul li{
 list-style-type: none;
 padding-bottom: 10px;
@@ -53,6 +65,8 @@ display: inline-block;
 margin-right: 20px;
 }
 
+/* Styles the text inside the list
+    inside Socials */
 .socials a{
 color: #FFD700;
 font-weight:bold;
@@ -60,15 +74,19 @@ font-size: 24px;
 text-decoration: none;
 }
 
+/* Creates a showdow behind the links
+    inside of Socials */
 .socials a:hover {
 text-shadow: 1px 1px 1px black;
 }
 
+/* */
 .WebContainer{
     width: 100%;
     height: auto;
 }
 
+/* */
 .articles{
     width:90%; /*Takes 90% width from WebContainer*/
     height: auto;
