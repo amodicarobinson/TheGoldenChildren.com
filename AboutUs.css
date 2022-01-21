@@ -80,13 +80,13 @@ text-decoration: none;
 text-shadow: 1px 1px 1px black;
 }
 
-/* */
+/* Site resizing */
 .WebContainer{
     width: 100%;
     height: auto;
 }
 
-/* */
+/* Contents imside body resizing */
 .articles{
     width:90%; /*Takes 90% width from WebContainer*/
     height: auto;

@@ -1,4 +1,4 @@
-/*Styles the body*/
+/* Styles the body */
 body{
   background-color: white;
   padding-bottom: 40px;
@@ -7,7 +7,7 @@ body{
   z-index:
 }
 
-/**/
+/* Stles the header */
 header{
 background-color: white;
 position: fixed;
@@ -21,7 +21,7 @@ align-items: center;
 text-align: center;
 }
 
-/* */
+/* Class to move logo pic to the center */
 .center{
 display: block;
 margin-left: auto;
@@ -29,6 +29,10 @@ margin-right: auto;
 width: 50%;
 }
 
+/* Styles the nav bar
+  Changed the main nav
+  to resize properly when
+  window size changes */
 .nav{
 display: inline-block;
 list-style-type: none;
@@ -40,6 +44,8 @@ height: 10%;
 text-align: center;
 }
 
+/* Styles the surronding elements
+    of the Nav bar */
 .nav ul
 {
 display: inline-block;
@@ -49,11 +55,14 @@ margin: 10px;
 padding-right:10px;
 }
 
+/* Styles the list elemts */
 .nav li{
 display: inline-block;
 list-style-type: none;
 margin-top:10px;
 }
+
+/* Styles the text in the element */
 .nav a{
 width: 150px;
 font-size: 15px;
@@ -65,10 +74,15 @@ padding: 10px;
 text-decoration: none;
 }
 
+/* Creates a showdow behind the text
+    when hovering over Nav bar elements */
 .nav a:hover {
 text-shadow: 1px 1px 2px black;
 }
 
+/* Makes site change view depending
+    on the size of window
+    (Also can be seen as phone optimization)*/
 @media only screen and (max-width: 600px) {
   body {
   }
