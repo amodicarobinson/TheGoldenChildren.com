@@ -5,15 +5,15 @@ body{
 
 /* Stles the header */
 .center{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
 }
 
 /* Styles the main article  */
 article{
-  text-align: left;
+text-align: left;
 }
 
 /* Styles the h1 within the article element */
@@ -82,13 +82,13 @@ text-shadow: 1px 1px 1px black;
 
 /* Site resizing */
 .WebContainer{
-    width: 100%;
-    height: auto;
+width: 100%;
+height: auto;
 }
 
 /* Contents imside body resizing */
 .articles{
-    width:90%; /*Takes 90% width from WebContainer*/
-    height: auto;
-    margin: auto;
+width:90%; /*Takes 90% width from WebContainer*/
+height: auto;
+margin: auto;
 }
