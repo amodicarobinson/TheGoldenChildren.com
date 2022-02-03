@@ -1,17 +1,21 @@
-
 body{
-border-style: dashed;
+
 }
 
+
 .center{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+}
+
+.allclothes{
+
 }
 
 .clothes{
-border-style: dashed;
+box-shadow: 10px 10px 8px #888888;
 text-align: center;
 width: 33%;
 display: inline-block;
@@ -20,21 +24,26 @@ margin-right: 100px;
 margin-top: 100px;
 }
 
+
 .clothes img{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+display: block;
+margin-left: auto;
+margin-right: auto;
 }
+
+
 .clothes2{
-border-style: dashed;
+box-shadow: 10px 10px 8px #888888;
 text-align: center;
 height:auto;
 width: 33%;
 height:33%;
 display: inline-block;
 }
+
+
 .clothes3{
-border-style: dashed;
+box-shadow: 10px 10px 8px #888888;
 text-align: center;
 height:auto;
 width: 33%;
@@ -44,8 +53,10 @@ margin-left:250px;
 margin-right: 100px;
 margin-top: 100px;
 }
+
+
 .clothes4{
-  border-style: dashed;
+box-shadow: 10px 10px 8px #888888;
 text-align: center;
 height:auto;
 width: 33%;
