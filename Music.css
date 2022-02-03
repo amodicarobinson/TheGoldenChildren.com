@@ -13,7 +13,6 @@ width: 50%;
 
 /* Styles Progress Report box */
 .project1{
-border-style: dashed;
 border-radius: 1px black;
 width:20%;
 position:relative;
@@ -25,9 +24,12 @@ margin-left: 60px;
 text-align: center;
 }
 
+.project1:hover{
+box-shadow: 10px 10px 8px #888888;
+}
+
 /* Styles Cope Box */
 .project2{
-border-style: dashed;
 border-radius: 1px black;
 width:20%;
 margin-bottom: 50px;
@@ -37,9 +39,12 @@ margin-right: 60px;
 text-align: center;
 }
 
+.project2:hover{
+box-shadow: 10px 10px 8px #888888;
+}
+
 /* Styles Demos from Cope Box */
 .project3{
-border-style: dashed;
 border-radius: 1px black;
 width:20%;
 position:relative;
@@ -48,14 +53,21 @@ display: inline-block;
 text-align: center;
 }
 
+.project3:hover{
+box-shadow: 10px 10px 8px #888888;
+}
+
 /* Styles P.M. Vibes Box */
 .project4{
-border-style: dashed;
 border-radius: 1px black;
 width:20%;
 position:relative;
 display: inline-block;
 text-align: center;
+}
+
+.project4:hover{
+box-shadow: 10px 10px 8px #888888;
 }
 
 /* Styles all "A" or text elements
