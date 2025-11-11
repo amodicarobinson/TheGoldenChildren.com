@@ -1,19 +1,51 @@
-.clock{
-  background: white;
-  width: 200px;
-  padding: 10px;
+/* Simple centered clock - no box styling */
+.clock {
   text-align: center;
-  border-radius: 10px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: var(--spacing-xxl, 4rem) auto;
   display: block;
 }
+
 .clock-time,
-.clock-ampm{
-  font-family: 'Stick No Bills', sans-serif;
-  font-size: 30px;
-  color: #FFD700;
+.clock-ampm {
+  font-family: var(--font-family-primary, 'Stick No Bills'), sans-serif;
+  color: var(--color-gold-primary, #FFD700);
+  display: block;
+  line-height: var(--line-height-tight, 1.2);
 }
-.clock-ampm{
-  font-size: 12px;
+
+.clock-time {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs, 0.5rem);
+}
+
+.clock-ampm {
+  font-size: 1rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+@media only screen and (max-width: 768px) {
+  .clock {
+    margin: var(--spacing-xl, 3rem) auto;
+  }
+  
+  .clock-time {
+    font-size: 2.5rem;
+  }
+  
+  .clock-ampm {
+    font-size: 0.875rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .clock-time {
+    font-size: 2rem;
+  }
+  
+  .clock-ampm {
+    font-size: 0.75rem;
+  }
 }

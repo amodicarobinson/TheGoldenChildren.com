@@ -1,81 +1,373 @@
-/* Styles the body */
-body{
-  background-color: white;
-  padding-bottom: 40px;
-  margin-top: 50px;
+/* ========================================
+   CSS Custom Properties (Design Tokens)
+   ======================================== */
+:root {
+  /* Colors */
+  --color-gold-primary: #FFD700;
+  --color-gold-dark: #D4AF37;
+  --color-gold-light: #FFF8DC;
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8f9fa;
+  --color-bg-dark: #1a1a1a;
+  --color-text-primary: #333333;
+  --color-text-secondary: #666666;
+  --color-text-light: #ffffff;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-xxl: 4rem;
+  
+  /* Typography */
+  --font-family-primary: 'Stick No Bills', sans-serif;
+  --font-family-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-size-base: 1rem;
+  --font-size-sm: 0.875rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-xxl: 2rem;
+  --line-height-base: 1.6;
+  --line-height-tight: 1.2;
+  
+  /* Borders */
+  --border-radius-sm: 0.5rem;
+  --border-radius-md: 0.75rem;
+  --border-radius-lg: 1rem;
+  --border-radius-xl: 1.5rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+  --shadow-gold: 0 4px 15px rgba(255, 215, 0, 0.3);
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* Layout */
+  --container-max-width: 1200px;
+  --container-padding: 1.5rem;
+}
+
+/* ========================================
+   Base Styles
+   ======================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
   position: relative;
 }
 
-/* Styles the header */
-header{
-  background-color: white;
-  position: relative;
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========================================
+   Header Styles
+   ======================================== */
+header {
+  background-color: var(--color-bg-primary);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Logo link */
+.logo-link {
+  display: block;
+  text-decoration: none;
+  transition: transform var(--transition-base);
+}
+
+.logo-link:hover {
+  transform: scale(1.05);
+}
+
+/* Logo centering */
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  max-width: 300px;
+  padding: var(--spacing-md) 0;
+}
+
+/* ========================================
+   Navigation Styles
+   ======================================== */
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin: var(--spacing-md) auto 0;
   width: 100%;
 }
 
-/* Class to move logo pic to the center */
-.center{
-display: block;
-margin-left: auto;
-margin-right: auto;
-width: 50%;
+.nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: var(--spacing-xs);
+  width: 100%;
 }
 
-/* Styles the nav bar
-  Changed the main nav
-  to resize properly when
-  window size changes */
-.nav{
-display: inline-block;
-list-style-type: none;
-padding: 0%;
-margin: 0%;
-overflow: hidden;
-width: 100%;
-height: 10%;
-text-align: center;
+.nav li {
+  list-style-type: none;
+  margin: 0;
+  flex: 0 1 auto;
 }
 
-/* Styles the surronding elements
-    of the Nav bar */
-.nav ul
-{
-display: inline-block;
-list-style-type: none;
-padding: 0%;
-margin: 10px;
-padding-right:10px;
+.nav a {
+  display: block;
+  color: var(--color-gold-primary);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  text-align: center;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  text-decoration: none;
+  border-radius: var(--border-radius-md);
+  transition: all var(--transition-base);
+  position: relative;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.875rem;
 }
 
-/* Styles the list elemts */
-.nav li{
-display: inline-block;
-list-style-type: none;
-margin-top:10px;
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 1px;
+  height: 0;
+  background-color: rgba(255, 215, 0, 0.3);
+  transform: translateY(-50%);
+  transition: height var(--transition-base);
 }
 
-/* Styles the text in the element */
-.nav a{
-width: 150px;
-font-size: 15px;
-font-weight:bold;
-display: block;
-color: #FFD700;
-text-align: center;
-padding: 10px;
-text-decoration: none;
+.nav li:first-child a::after {
+  display: none;
 }
 
-/* Creates a showdow behind the text
-    when hovering over Nav bar elements */
-.nav a:hover {
-text-shadow: 1px 1px 2px black;
+.nav a:hover,
+.nav a:focus {
+  background-color: rgba(255, 215, 0, 0.12);
+  transform: translateY(-1px);
+  outline: none;
+  color: var(--color-gold-dark);
 }
 
-/* Makes site change view depending
-    on the size of window
-    (Also can be seen as phone optimization)*/
-@media only screen and (max-width: 600px) {
-  body {
+.nav a:hover::after,
+.nav a:focus::after {
+  height: 60%;
+}
+
+.nav a:active {
+  transform: translateY(0);
+}
+
+/* Active page indicator */
+.nav a[aria-current="page"] {
+  background-color: rgba(255, 215, 0, 0.18);
+  color: var(--color-gold-dark);
+  font-weight: 700;
+}
+
+/* ========================================
+   Main Content
+   ======================================== */
+main {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--container-padding);
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-bottom: var(--spacing-xxl);
+  padding: var(--spacing-xl) 0;
+}
+
+.hero-title {
+  font-family: var(--font-family-primary);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--color-gold-primary);
+  margin-bottom: var(--spacing-md);
+  font-weight: 600;
+  line-height: var(--line-height-tight);
+}
+
+.hero-text {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  color: var(--color-gold-primary);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: var(--line-height-base);
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.golden-highlight {
+  color: var(--color-gold-primary);
+  font-weight: 700;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.6), 0 2px 10px rgba(255, 215, 0, 0.4);
+  position: relative;
+  display: inline-block;
+  font-size: 1.1em;
+}
+
+.golden-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-gold-primary), transparent);
+  opacity: 0.6;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scaleX(0.8);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scaleX(1);
+  }
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+.site-footer {
+  background-color: var(--color-bg-secondary);
+  padding: var(--spacing-lg) var(--container-padding);
+  margin-top: var(--spacing-xxl);
+  text-align: center;
+  border-top: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.site-footer p {
+  margin: 0 0 var(--spacing-sm);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.footer-links a {
+  color: var(--color-gold-primary);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  transition: color var(--transition-base);
+}
+
+.footer-links a:hover {
+  color: var(--color-gold-dark);
+  text-decoration: underline;
+}
+
+.footer-links span {
+  color: var(--color-text-secondary);
+  margin: 0 var(--spacing-xs);
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+@media only screen and (max-width: 768px) {
+  :root {
+    --container-padding: 1rem;
+    --font-size-base: 0.9375rem;
+  }
+  
+  .center {
+    width: 70%;
+    max-width: 250px;
+  }
+  
+  .nav {
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin: var(--spacing-sm) auto 0;
+  }
+  
+  .nav ul {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+  
+  .nav a {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.8125rem;
+  }
+  
+  .nav a::after {
+    display: none;
+  }
+  
+  main {
+    padding: var(--spacing-lg) var(--container-padding);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .center {
+    width: 80%;
+    max-width: 200px;
+  }
+  
+  .nav a {
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+}
+
+/* Print styles */
+@media print {
+  header {
+    position: static;
+    box-shadow: none;
+  }
+  
+  .nav {
+    display: none;
   }
 }

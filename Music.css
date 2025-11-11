@@ -1,98 +1,116 @@
-body{
-
+/* Projects Grid Container */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg, 2rem);
+  margin: var(--spacing-xl, 3rem) auto;
+  max-width: 1200px;
+  padding: 0 var(--container-padding, 1.5rem);
 }
 
-/* Class to move
-    logo pic to the center */
-.center{
-display: block;
-margin-left: auto;
-margin-right: auto;
-width: 50%;
+/* Project Card Styles */
+.project1,
+.project2,
+.project3,
+.project4 {
+  background: var(--color-bg-primary, #ffffff);
+  border-radius: var(--border-radius-lg, 1rem);
+  padding: var(--spacing-lg, 2rem);
+  text-align: center;
+  box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+  border: 2px solid rgba(255, 215, 0, 0.1);
+  transition: all var(--transition-base, 0.3s ease);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Styles Progress Report box */
-.project1{
-border-radius: 1px black;
-width:20%;
-position:relative;
-left:0%;
-display: inline-block;
-margin-top: 100px;
-margin-right: 60px;
-margin-left: 60px;
-text-align: center;
+.project1::before,
+.project2::before,
+.project3::before,
+.project4::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+  transition: left var(--transition-slow, 0.5s ease);
 }
 
-.project1:hover{
-box-shadow: 10px 10px 8px #888888;
+.project1:hover::before,
+.project2:hover::before,
+.project3:hover::before,
+.project4:hover::before {
+  left: 100%;
 }
 
-/* Styles Cope Box */
-.project2{
-border-radius: 1px black;
-width:20%;
-margin-bottom: 50px;
-position:relative;
-display: inline-block;
-margin-right: 60px;
-text-align: center;
+.project1:hover,
+.project2:hover,
+.project3:hover,
+.project4:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl, 0 20px 25px rgba(0, 0, 0, 0.15)), var(--shadow-gold, 0 4px 15px rgba(255, 215, 0, 0.3));
+  border-color: rgba(255, 215, 0, 0.3);
 }
 
-.project2:hover{
-box-shadow: 10px 10px 8px #888888;
+/* Project Links */
+.projects a {
+  color: var(--color-text-primary, #333333);
+  text-decoration: none;
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-weight: 600;
+  transition: all var(--transition-base, 0.3s ease);
+  display: block;
 }
 
-/* Styles Demos from Cope Box */
-.project3{
-border-radius: 1px black;
-width:20%;
-position:relative;
-margin-right: 60px;
-display: inline-block;
-text-align: center;
-}
-
-.project3:hover{
-box-shadow: 10px 10px 8px #888888;
-}
-
-/* Styles P.M. Vibes Box */
-.project4{
-border-radius: 1px black;
-width:20%;
-position:relative;
-display: inline-block;
-text-align: center;
-}
-
-.project4:hover{
-box-shadow: 10px 10px 8px #888888;
-}
-
-/* Styles all "A" or text elements
-    inside each project element */
-a{
-color: inherit;
-text-decoration: inherit;
-font-size: 24px;
-}
-
-/* Creates shadow behind text
-    when hovering */
 .project1 a:hover,
 .project2 a:hover,
 .project3 a:hover,
-.project4 a:hover{
-  color: #FFD700;
-  text-shadow: 1px 1px 1px black;
-  text-decoration: inherit;
+.project4 a:hover,
+.project1 a:focus,
+.project2 a:focus,
+.project3 a:focus,
+.project4 a:focus {
+  color: var(--color-gold-primary, #FFD700);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  outline: none;
 }
 
-/* Styles Spotify   */
-.playlist{
+/* Spotify Playlist */
+.playlist {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+  margin: var(--spacing-xxl, 4rem) auto;
+  max-width: 800px;
+  width: 90%;
+  border-radius: var(--border-radius-lg, 1rem);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg, 0 10px 15px rgba(0, 0, 0, 0.1));
+  background: var(--color-bg-primary, #ffffff);
+  padding: var(--spacing-md, 1.5rem);
+}
+
+.playlist iframe {
+  border-radius: var(--border-radius-md, 0.75rem);
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .projects {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md, 1.5rem);
+    margin: var(--spacing-lg, 2rem) auto;
+  }
+  
+  .project1,
+  .project2,
+  .project3,
+  .project4 {
+    padding: var(--spacing-md, 1.5rem);
+  }
+  
+  .playlist {
+    margin: var(--spacing-xl, 3rem) auto;
+    padding: var(--spacing-sm, 1rem);
+  }
 }

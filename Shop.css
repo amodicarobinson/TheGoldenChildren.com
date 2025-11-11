@@ -1,66 +1,136 @@
-body{
-
+/* Product Grid Container */
+.allclothes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-xl, 3rem);
+  margin: var(--spacing-xxl, 4rem) auto;
+  max-width: 1200px;
+  padding: 0 var(--container-padding, 1.5rem);
 }
 
-
-.center{
-display: block;
-margin-left: auto;
-margin-right: auto;
-width: 50%;
+/* Product Card Styles */
+.clothes,
+.clothes2,
+.clothes3,
+.clothes4 {
+  background: var(--color-bg-primary, #ffffff);
+  border-radius: var(--border-radius-lg, 1rem);
+  padding: var(--spacing-lg, 2rem);
+  text-align: center;
+  box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+  border: 2px solid rgba(255, 215, 0, 0.1);
+  transition: all var(--transition-base, 0.3s ease);
+  position: relative;
+  overflow: hidden;
 }
 
-.allclothes{
-
+.clothes::before,
+.clothes2::before,
+.clothes3::before,
+.clothes4::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-gold-primary, #FFD700), var(--color-gold-dark, #D4AF37));
+  transform: scaleX(0);
+  transition: transform var(--transition-base, 0.3s ease);
 }
 
-.clothes{
-box-shadow: 10px 10px 8px #888888;
-text-align: center;
-width: 33%;
-display: inline-block;
-margin-left:250px;
-margin-right: 100px;
-margin-top: 100px;
+.clothes:hover::before,
+.clothes2:hover::before,
+.clothes3:hover::before,
+.clothes4:hover::before {
+  transform: scaleX(1);
 }
 
-
-.clothes img{
-display: block;
-margin-left: auto;
-margin-right: auto;
+.clothes:hover,
+.clothes2:hover,
+.clothes3:hover,
+.clothes4:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl, 0 20px 25px rgba(0, 0, 0, 0.15)), var(--shadow-gold, 0 4px 15px rgba(255, 215, 0, 0.3));
+  border-color: rgba(255, 215, 0, 0.3);
 }
 
-
-.clothes2{
-box-shadow: 10px 10px 8px #888888;
-text-align: center;
-height:auto;
-width: 33%;
-height:33%;
-display: inline-block;
+/* Product Images */
+.clothes img,
+.clothes2 img,
+.clothes3 img,
+.clothes4 img {
+  display: block;
+  margin: 0 auto var(--spacing-md, 1.5rem);
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: var(--border-radius-md, 0.75rem);
+  transition: transform var(--transition-base, 0.3s ease);
+  object-fit: cover;
 }
 
-
-.clothes3{
-box-shadow: 10px 10px 8px #888888;
-text-align: center;
-height:auto;
-width: 33%;
-height:33%;
-display: inline-block;
-margin-left:250px;
-margin-right: 100px;
-margin-top: 100px;
+.clothes:hover img,
+.clothes2:hover img,
+.clothes3:hover img,
+.clothes4:hover img {
+  transform: scale(1.05);
 }
 
+/* Product Titles */
+.clothes h1,
+.clothes2 h1,
+.clothes3 h1,
+.clothes4 h1 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  color: var(--color-text-primary, #333333);
+  margin: 0;
+  font-weight: 600;
+  transition: color var(--transition-base, 0.3s ease);
+}
 
-.clothes4{
-box-shadow: 10px 10px 8px #888888;
-text-align: center;
-height:auto;
-width: 33%;
-height:33%;
-display: inline-block;
-margin-bottom: 100px;
+.clothes:hover h1,
+.clothes2:hover h1,
+.clothes3:hover h1,
+.clothes4:hover h1 {
+  color: var(--color-gold-primary, #FFD700);
+}
+
+/* Coming Soon Badge (you can add this to HTML later) */
+.clothes::after,
+.clothes2::after,
+.clothes3::after,
+.clothes4::after {
+  content: 'Coming Soon';
+  position: absolute;
+  top: var(--spacing-md, 1.5rem);
+  right: var(--spacing-md, 1.5rem);
+  background: var(--color-gold-primary, #FFD700);
+  color: var(--color-text-primary, #333333);
+  padding: var(--spacing-xs, 0.5rem) var(--spacing-sm, 1rem);
+  border-radius: var(--border-radius-sm, 0.5rem);
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+@media only screen and (max-width: 768px) {
+  .allclothes {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg, 2rem);
+    margin: var(--spacing-xl, 3rem) auto;
+  }
+  
+  .clothes,
+  .clothes2,
+  .clothes3,
+  .clothes4 {
+    padding: var(--spacing-md, 1.5rem);
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .allclothes {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
