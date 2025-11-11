@@ -36,5 +36,7 @@ start(){
 }
 
 const clockElement = document.querySelector(".clock");
-const clockObject = new DigitalClock(clockElement);
-clockObject.start();
+if (clockElement) {
+  const clockObject = new DigitalClock(clockElement);
+  clockObject.start();
+}

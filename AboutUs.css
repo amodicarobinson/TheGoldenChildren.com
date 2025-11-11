@@ -1,42 +1,42 @@
-/* Styles the body */
-body{
-
+/* Centers content - replaces deprecated <center> tag */
+.centered{
+  text-align: center;
 }
 
-/* Stles the header */
-.center{
-display: block;
-margin-left: auto;
-margin-right: auto;
-width: 50%;
+/* Highlights important text */
+.highlight{
+  font-weight: bold;
+  font-size: 30px;
+  color: #FFD700;
 }
 
 /* Styles the main article  */
 article{
-text-align: left;
+  text-align: left;
 }
 
 /* Styles the h1 within the article element */
 article h1{
-text-decoration: line-through;
-font-size: 50px;
-color: #FFD700;
-text-shadow: 1px 1px 1px black;
+  text-decoration: line-through;
+  font-size: 50px;
+  color: #FFD700;
+  text-shadow: 1px 1px 1px black;
 }
 
 /* Styles the paragraph element
     of the article */
 article p{
-font-size: 24px;
-font-weight: bold;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 /* Resizes the pictures for the
     the logo images */
 .logo{
-height: 50px;
-width: 50px;
-display: inline-block;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* Styles the class to align social

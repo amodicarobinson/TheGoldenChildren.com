@@ -4,21 +4,13 @@ body{
   padding-bottom: 40px;
   margin-top: 50px;
   position: relative;
-  z-index:
 }
 
-/* Stles the header */
+/* Styles the header */
 header{
-background-color: white;
-position: fixed;
-left: 0;
-right: 0;
-top: 5px;
-height: 30px;
-display: flex;
-align-items: center;
-
-text-align: center;
+  background-color: white;
+  position: relative;
+  width: 100%;
 }
 
 /* Class to move logo pic to the center */

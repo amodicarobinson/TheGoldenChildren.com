@@ -7,32 +7,32 @@
   <link rel="stylesheet" href="TheGoldenChildren.css">
   <link rel="stylesheet" href="clock.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@500&display=swap" rel="stylesheet">
   <title>The Golden Children</title>
 </head>
 <body>
-
-    <img src = "Gold wo 1blur.png" class="center">
-
   <header>
-
+    <img src="Gold wo 1blur.png" alt="The Golden Children Logo" class="center">
+    
+    <nav class="nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Shop.html">Shop</a></li>
+        <li><a href="Videos.html">Videos</a></li>
+        <li><a href="Music.html">Music</a></li>
+        <li><a href="AboutUs.html">About Us</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <div class="nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="Shop.html">Shop</a></li>
-      <li><a href="Videos.html">Videos</a></li>
-      <li><a href="Music.html">Music</a></li>
-      <li><a href="AboutUs.html">About Us</a></li>
-    </ul>
-  </div>
+  <main>
+    <div class="clock" role="timer" aria-live="polite">
+      <span class="clock-time"></span>
+      <span class="clock-ampm"></span>
+    </div>
+  </main>
 
-  <div class="clock">
-        <span class="clock-time"></span>
-        <span class="clock-ampm"></span>
-  </div>
-<script src="clock.js" charset="utf-8"></script>
+  <script src="clock.js"></script>
 </body>
 </html>
