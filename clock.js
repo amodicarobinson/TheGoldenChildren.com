@@ -14,10 +14,10 @@ start(){
   update(){
         const parts = this.getTimeParts();
         const minuteFormatted = parts.minutes.toString().padStart(2, "0");
-        const timeFormmated =  `${parts.hour}:${minuteFormatted}`;
+        const timeFormatted =  `${parts.hour}:${minuteFormatted}`;
         const amPm = parts.isAM ? "AM" : "PM";
 
-        this.element.querySelector(".clock-time").textContent = timeFormmated;
+        this.element.querySelector(".clock-time").textContent = timeFormatted;
         this.element.querySelector(".clock-ampm").textContent = amPm;
 
 

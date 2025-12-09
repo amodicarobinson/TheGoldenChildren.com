@@ -152,3 +152,8 @@ width:90%; /*Takes 90% width from WebContainer*/
 height: auto;
 margin: auto;
 }
+
+.logo-rect {
+  width: 75px;
+  height: 50px;
+}
