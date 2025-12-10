@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+
+{% block title %}Admin Dashboard - The Golden Children{% endblock %}
+
+{% block head %}
+<style>
+    .admin-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .admin-section {
+        background: #fff;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .admin-section h2 {
+        color: #D4AF37;
+        margin-bottom: 1.5rem;
+        border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+        padding-bottom: 0.5rem;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+    }
+
+    th, td {
+        padding: 0.75rem;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+    }
+
+    th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+    }
+
+    .btn-delete {
+        color: #dc3545;
+        text-decoration: none;
+        font-size: 0.875rem;
+        font-weight: bold;
+    }
+
+    .btn-delete:hover {
+        text-decoration: underline;
+    }
+
+    .logout-btn {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: #dc3545;
+        color: white;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        .admin-container {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <h1 style="color: #FFD700;">Admin Dashboard</h1>
+    <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+</div>
+
+<div class="admin-container">
+    <!-- Product Manager -->
+    <div class="admin-section">
+        <h2>Shop Products</h2>
+
+        <!-- Add Product Form -->
+        <form method="POST" style="margin-bottom: 2rem; background: #f8f9fa; padding: 1rem; border-radius: 0.5rem;">
+            <h3 style="margin-top: 0; font-size: 1.1rem;">Add New Product</h3>
+            <div style="display: grid; gap: 0.5rem;">
+                <input type="text" name="name" placeholder="Product Name" required style="padding: 0.5rem;">
+                <input type="text" name="price" placeholder="Price (e.g., $25.00)" required style="padding: 0.5rem;">
+                <input type="text" name="image" placeholder="Image Filename (e.g., comingsoon.png)" style="padding: 0.5rem;">
+                <button type="submit" style="padding: 0.5rem; background: #28a745; color: white; border: none; cursor: pointer;">Add Product</button>
+            </div>
+        </form>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.price }}</td>
+                        <td>
+                            <form action="{{ url_for('delete_product', id=product.id) }}" method="POST" style="display:inline;">
+                                <button type="submit" class="btn-delete" style="background:none; border:none; cursor:pointer;" onclick="return confirm('Are you sure?')">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Messages Inbox -->
+    <div class="admin-section">
+        <h2>Contact Messages</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>From</th>
+                        <th>Message</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for msg in messages %}
+                    <tr>
+                        <td>
+                            <strong>{{ msg.name }}</strong><br>
+                            <span style="font-size: 0.8em; color: #666;">{{ msg.email }}</span>
+                        </td>
+                        <td>{{ msg.message }}</td>
+                        <td style="font-size: 0.8em; color: #666;">{{ msg.date_sent.strftime('%Y-%m-%d') }}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="3" style="text-align: center;">No messages yet.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
