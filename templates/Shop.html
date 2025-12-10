@@ -4,23 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="TheGoldenChildren.css">
-  <link rel="stylesheet" href="Shop.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='TheGoldenChildren.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='Shop.css') }}">
   <title>Shop - The Golden Children</title>
 </head>
 <body>
   <header>
-    <a href="index.html" class="logo-link">
-      <img src="gold-wo-1blur.png" alt="The Golden Children Logo" class="center">
+    <a href="{{ url_for('home') }}" class="logo-link">
+      <img src="{{ url_for('static', filename='gold-wo-1blur.png') }}" alt="The Golden Children Logo" class="center">
     </a>
     
     <nav class="nav" aria-label="Main navigation">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="Shop.html">Shop</a></li>
-        <li><a href="Videos.html">Videos</a></li>
-        <li><a href="Music.html">Music</a></li>
-        <li><a href="AboutUs.html">About Us</a></li>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('shop') }}">Shop</a></li>
+        <li><a href="{{ url_for('videos') }}">Videos</a></li>
+        <li><a href="{{ url_for('music') }}">Music</a></li>
+        <li><a href="{{ url_for('about') }}">About Us</a></li>
       </ul>
     </nav>
   </header>
@@ -28,19 +28,19 @@
   <main>
     <section class="allclothes" aria-label="Product listings">
       <article class="clothes">
-        <img src="comingsoon.png" alt="TGC Track Suit - Coming Soon" width="100" height="100">
+        <img src="{{ url_for('static', filename='comingsoon.png') }}" alt="TGC Track Suit - Coming Soon" width="100" height="100">
         <h1>TGC Track Suit</h1>
       </article>
       <article class="clothes2">
-        <img src="comingsoon.png" alt="TGC Logo Tee - Coming Soon" width="100" height="100">
+        <img src="{{ url_for('static', filename='comingsoon.png') }}" alt="TGC Logo Tee - Coming Soon" width="100" height="100">
         <h1>TGC Logo Tee</h1>
       </article>
       <article class="clothes3">
-        <img src="comingsoon.png" alt="TGC Home Team Tee - Coming Soon" width="100" height="100">
+        <img src="{{ url_for('static', filename='comingsoon.png') }}" alt="TGC Home Team Tee - Coming Soon" width="100" height="100">
         <h1>TGC Home Team Tee</h1>
       </article>
       <article class="clothes4">
-        <img src="comingsoon.png" alt="TGC Box Logo Tee - Coming Soon" width="100" height="100">
+        <img src="{{ url_for('static', filename='comingsoon.png') }}" alt="TGC Box Logo Tee - Coming Soon" width="100" height="100">
         <h1>TGC Box Logo Tee</h1>
       </article>
     </section>
@@ -49,7 +49,7 @@
   <footer class="site-footer">
     <p>&copy; 2024 The Golden Children. All rights reserved.</p>
     <div class="footer-links">
-      <a href="AboutUs.html">About Us</a>
+      <a href="{{ url_for('about') }}">About Us</a>
       <span>•</span>
       <a href="https://www.instagram.com/the__golden__children" target="_blank" rel="noopener noreferrer">Instagram</a>
       <span>•</span>
@@ -59,6 +59,6 @@
     </div>
   </footer>
 
-  <script src="navigation.js"></script>
+  <script src="{{ url_for('static', filename='navigation.js') }}"></script>
 </body>
 </html>

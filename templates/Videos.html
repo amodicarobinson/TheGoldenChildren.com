@@ -4,23 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="TheGoldenChildren.css">
-  <link rel="stylesheet" href="Videos.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='TheGoldenChildren.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='Videos.css') }}">
   <title>Videos - The Golden Children</title>
 </head>
 <body>
   <header>
-    <a href="index.html" class="logo-link">
-      <img src="gold-wo-1blur.png" alt="The Golden Children Logo" class="center">
+    <a href="{{ url_for('home') }}" class="logo-link">
+      <img src="{{ url_for('static', filename='gold-wo-1blur.png') }}" alt="The Golden Children Logo" class="center">
     </a>
     
     <nav class="nav" aria-label="Main navigation">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="Shop.html">Shop</a></li>
-        <li><a href="Videos.html">Videos</a></li>
-        <li><a href="Music.html">Music</a></li>
-        <li><a href="AboutUs.html">About Us</a></li>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('shop') }}">Shop</a></li>
+        <li><a href="{{ url_for('videos') }}">Videos</a></li>
+        <li><a href="{{ url_for('music') }}">Music</a></li>
+        <li><a href="{{ url_for('about') }}">About Us</a></li>
       </ul>
     </nav>
   </header>
@@ -44,7 +44,7 @@
   <footer class="site-footer">
     <p>&copy; 2024 The Golden Children. All rights reserved.</p>
     <div class="footer-links">
-      <a href="AboutUs.html">About Us</a>
+      <a href="{{ url_for('about') }}">About Us</a>
       <span>•</span>
       <a href="https://www.instagram.com/the__golden__children" target="_blank" rel="noopener noreferrer">Instagram</a>
       <span>•</span>
@@ -54,6 +54,6 @@
     </div>
   </footer>
 
-  <script src="navigation.js"></script>
+  <script src="{{ url_for('static', filename='navigation.js') }}"></script>
 </body>
 </html>
