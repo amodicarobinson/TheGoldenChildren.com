@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "TGC Track Suit",
+    "image": "comingsoon.png",
+    "price": "Coming Soon"
+  },
+  {
+    "id": 2,
+    "name": "TGC Logo Tee",
+    "image": "comingsoon.png",
+    "price": "Coming Soon"
+  },
+  {
+    "id": 3,
+    "name": "TGC Home Team Tee",
+    "image": "comingsoon.png",
+    "price": "Coming Soon"
+  },
+  {
+    "id": 4,
+    "name": "TGC Box Logo Tee",
+    "image": "comingsoon.png",
+    "price": "Coming Soon"
+  }
+]

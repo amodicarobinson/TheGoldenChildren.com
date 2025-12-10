@@ -1,66 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="The Golden Children - A group of young men who strive for excellence. Music, videos, and merchandise.">
-  <meta name="keywords" content="The Golden Children, music, hip hop, rap, artists">
-  <meta property="og:title" content="The Golden Children">
-  <meta property="og:description" content="A group of young men who strive for excellence. We set the golden standard.">
-  <meta property="og:type" content="website">
-  <link rel="stylesheet" href="{{ url_for('static', filename='TheGoldenChildren.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='clock.css') }}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@500&display=swap" rel="stylesheet">
-  <title>The Golden Children - Home</title>
-</head>
-<body>
-  <header>
-    <a href="{{ url_for('home') }}" class="logo-link">
-      <img src="{{ url_for('static', filename='gold-wo-1blur.png') }}" alt="The Golden Children Logo" class="center">
-    </a>
-    
-    <nav class="nav" aria-label="Main navigation">
-      <ul>
-        <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="{{ url_for('shop') }}">Shop</a></li>
-        <li><a href="{{ url_for('videos') }}">Videos</a></li>
-        <li><a href="{{ url_for('music') }}">Music</a></li>
-        <li><a href="{{ url_for('about') }}">About Us</a></li>
-      </ul>
-    </nav>
-  </header>
+{% extends "layout.html" %}
 
-  <main>
+{% block title %}The Golden Children - Home{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='clock.css') }}">
+{% endblock %}
+
+{% block content %}
     <section class="hero">
       <h1 class="hero-title">Welcome to The Golden Children</h1>
       <p class="hero-text">
         A group of young men who strive for excellence. We set the <span class="golden-highlight">GOLDEN STANDARD</span>.
       </p>
     </section>
-    
+
     <div class="clock" role="timer" aria-live="polite">
       <span class="clock-time"></span>
       <span class="clock-ampm"></span>
     </div>
-  </main>
+{% endblock %}
 
-  <footer class="site-footer">
-    <p>&copy; 2024 The Golden Children. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="{{ url_for('about') }}">About Us</a>
-      <span>•</span>
-      <a href="https://www.instagram.com/the__golden__children" target="_blank" rel="noopener noreferrer">Instagram</a>
-      <span>•</span>
-      <a href="https://www.twitter.com/TGoldenChildren" target="_blank" rel="noopener noreferrer">Twitter</a>
-      <span>•</span>
-      <a href="https://www.youtube.com/channel/UCsdoYGm3j91lvL0GWqCn2iw" target="_blank" rel="noopener noreferrer">YouTube</a>
-    </div>
-  </footer>
-
-  <script src="{{ url_for('static', filename='navigation.js') }}"></script>
+{% block scripts %}
   <script src="{{ url_for('static', filename='clock.js') }}"></script>
-</body>
-</html>
+{% endblock %}

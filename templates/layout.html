@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="The Golden Children - A group of young men who strive for excellence. Music, videos, and merchandise.">
+  <meta name="keywords" content="The Golden Children, music, hip hop, rap, artists">
+  <meta property="og:title" content="The Golden Children">
+  <meta property="og:description" content="A group of young men who strive for excellence. We set the golden standard.">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='TheGoldenChildren.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@500&display=swap" rel="stylesheet">
+
+  <title>{% block title %}The Golden Children{% endblock %}</title>
+
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <header>
+    <a href="{{ url_for('home') }}" class="logo-link">
+      <img src="{{ url_for('static', filename='gold-wo-1blur.png') }}" alt="The Golden Children Logo" class="center">
+    </a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('shop') }}">Shop</a></li>
+        <li><a href="{{ url_for('videos') }}">Videos</a></li>
+        <li><a href="{{ url_for('music') }}">Music</a></li>
+        <li><a href="{{ url_for('about') }}">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-messages" style="text-align: center; margin: 1rem 0;">
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }}" style="padding: 10px; border-radius: 5px; background-color: rgba(255, 215, 0, 0.2); color: #333; display: inline-block;">
+              {{ message }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2024 The Golden Children. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="{{ url_for('about') }}">About Us</a>
+      <span>•</span>
+      <a href="https://www.instagram.com/the__golden__children" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <span>•</span>
+      <a href="https://www.twitter.com/TGoldenChildren" target="_blank" rel="noopener noreferrer">Twitter</a>
+      <span>•</span>
+      <a href="https://www.youtube.com/channel/UCsdoYGm3j91lvL0GWqCn2iw" target="_blank" rel="noopener noreferrer">YouTube</a>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='navigation.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

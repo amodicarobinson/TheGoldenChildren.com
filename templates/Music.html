@@ -1,31 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="{{ url_for('static', filename='TheGoldenChildren.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='Music.css') }}">
-  <title>Music - The Golden Children</title>
-</head>
-<body>
-  <header>
-    <a href="{{ url_for('home') }}" class="logo-link">
-      <img src="{{ url_for('static', filename='gold-wo-1blur.png') }}" alt="The Golden Children Logo" class="center">
-    </a>
-    
-    <nav class="nav" aria-label="Main navigation">
-      <ul>
-        <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="{{ url_for('shop') }}">Shop</a></li>
-        <li><a href="{{ url_for('videos') }}">Videos</a></li>
-        <li><a href="{{ url_for('music') }}">Music</a></li>
-        <li><a href="{{ url_for('about') }}">About Us</a></li>
-      </ul>
-    </nav>
-  </header>
+{% extends "layout.html" %}
 
-  <main>
+{% block title %}Music - The Golden Children{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='Music.css') }}">
+{% endblock %}
+
+{% block content %}
     <section class="projects" aria-label="Music projects">
       <article class="project1">
         <h1><a href="https://open.spotify.com/album/39z8yyUrq6AcI7PMNPca2I?si=-7ETgKudS0aOi3-7hpIVjQ&dl_branch=1" target="_blank" rel="noopener noreferrer">Progress Report</a></h1>
@@ -44,21 +25,4 @@
     <section class="playlist" aria-label="Spotify playlist">
       <iframe src="https://open.spotify.com/embed/playlist/3BOmNVcZ27wr8ykUiTPUas" width="100%" height="380" style="border: 0;" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="The Golden Children Spotify Playlist"></iframe>
     </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>&copy; 2024 The Golden Children. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="{{ url_for('about') }}">About Us</a>
-      <span>•</span>
-      <a href="https://www.instagram.com/the__golden__children" target="_blank" rel="noopener noreferrer">Instagram</a>
-      <span>•</span>
-      <a href="https://www.twitter.com/TGoldenChildren" target="_blank" rel="noopener noreferrer">Twitter</a>
-      <span>•</span>
-      <a href="https://www.youtube.com/channel/UCsdoYGm3j91lvL0GWqCn2iw" target="_blank" rel="noopener noreferrer">YouTube</a>
-    </div>
-  </footer>
-
-  <script src="{{ url_for('static', filename='navigation.js') }}"></script>
-</body>
-</html>
+{% endblock %}
