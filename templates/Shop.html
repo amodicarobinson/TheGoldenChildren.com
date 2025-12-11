@@ -9,7 +9,7 @@
 {% block content %}
     <section class="allclothes" aria-label="Product listings">
       {% for product in products %}
-      <article class="card">
+      <article class="card animate-on-scroll animate-child">
         <img src="{{ url_for('static', filename=product.image) }}" alt="{{ product.name }}" width="100" height="100" style="object-fit: contain; margin-bottom: 1rem;">
         <h1 style="margin: 0; font-size: 1.25rem;">{{ product.name }}</h1>
         {% if product.price %}

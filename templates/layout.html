@@ -11,6 +11,7 @@
   <meta property="og:type" content="website">
 
   <link rel="stylesheet" href="{{ url_for('static', filename='TheGoldenChildren.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='nav.css') }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@500&display=swap" rel="stylesheet">
@@ -21,19 +22,25 @@
 </head>
 <body>
   <header>
-    <a href="{{ url_for('home') }}" class="logo-link">
-      <img src="{{ url_for('static', filename='gold-wo-1blur.png') }}" alt="The Golden Children Logo" class="center">
-    </a>
+    <div class="header-container">
+      <a href="{{ url_for('home') }}" class="logo-link">
+        <img src="{{ url_for('static', filename='gold-wo-1blur.png') }}" alt="The Golden Children Logo" class="center">
+      </a>
 
-    <nav class="nav" aria-label="Main navigation">
-      <ul>
-        <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="{{ url_for('shop') }}">Shop</a></li>
-        <li><a href="{{ url_for('videos') }}">Videos</a></li>
-        <li><a href="{{ url_for('music') }}">Music</a></li>
-        <li><a href="{{ url_for('about') }}">About Us</a></li>
-      </ul>
-    </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+
+      <nav class="nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('shop') }}">Shop</a></li>
+          <li><a href="{{ url_for('videos') }}">Videos</a></li>
+          <li><a href="{{ url_for('music') }}">Music</a></li>
+          <li><a href="{{ url_for('about') }}">About Us</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>

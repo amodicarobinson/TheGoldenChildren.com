@@ -61,7 +61,7 @@
 {% endblock %}
 
 {% block content %}
-    <article>
+    <article class="animate-on-scroll">
       <h1 class="centered">Who Are We?</h1>
       <p class="centered">
         <span class="highlight">The Golden Children</span> are a group of young men who strive for excellence.
@@ -71,7 +71,7 @@
       </p>
     </article>
 
-    <section class="contact-form" aria-label="Contact Form">
+    <section class="contact-form animate-on-scroll" aria-label="Contact Form">
         <h2>Contact Us</h2>
         <form action="{{ url_for('about') }}" method="post">
             <div class="form-group">

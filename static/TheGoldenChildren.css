@@ -435,3 +435,68 @@ main {
   transform: translateY(0);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+/* ========================================
+   Animations
+   ======================================== */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delay for child elements (like cards) */
+.animate-child:nth-child(1) { transition-delay: 0.1s; }
+.animate-child:nth-child(2) { transition-delay: 0.2s; }
+.animate-child:nth-child(3) { transition-delay: 0.3s; }
+.animate-child:nth-child(4) { transition-delay: 0.4s; }
+.animate-child:nth-child(5) { transition-delay: 0.5s; }
+.animate-child:nth-child(6) { transition-delay: 0.6s; }
+
+/* ========================================
+   Hero Polish
+   ======================================== */
+.hero {
+  background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1) 0%, rgba(255, 255, 255, 0) 70%),
+              repeating-linear-gradient(45deg, rgba(0,0,0,0.02) 0px, rgba(0,0,0,0.02) 2px, transparent 2px, transparent 10px);
+  padding: var(--spacing-xxl) var(--spacing-lg);
+  border-radius: var(--border-radius-xl);
+  margin-bottom: var(--spacing-xxl);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.05) 0%, transparent 60%);
+  animation: rotate 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: var(--spacing-lg);
+}
