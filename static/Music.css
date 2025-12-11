@@ -1,0 +1,42 @@
+/* Music Projects Layout */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects .card {
+  justify-content: center;
+  text-align: center;
+  min-height: 150px;
+  background: linear-gradient(135deg, #1e1e1e 0%, #121212 100%);
+}
+
+.projects h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.projects a {
+  text-decoration: none;
+  color: var(--color-gold-dark);
+  font-weight: 700;
+  transition: color var(--transition-base);
+}
+
+.projects a:hover {
+  color: var(--color-gold-primary);
+}
+
+/* Spotify Playlist */
+.playlist {
+  max-width: 800px;
+  margin: var(--spacing-xl) auto;
+  padding: 0 var(--spacing-md);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}

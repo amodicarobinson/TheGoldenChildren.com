@@ -1,31 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="TheGoldenChildren.css">
-  <link rel="stylesheet" href="Videos.css">
-  <title>Videos - The Golden Children</title>
-</head>
-<body>
-  <header>
-    <a href="index.html" class="logo-link">
-      <img src="Gold wo 1blur.png" alt="The Golden Children Logo" class="center">
-    </a>
-    
-    <nav class="nav" aria-label="Main navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="Shop.html">Shop</a></li>
-        <li><a href="Videos.html">Videos</a></li>
-        <li><a href="Music.html">Music</a></li>
-        <li><a href="AboutUs.html">About Us</a></li>
-      </ul>
-    </nav>
-  </header>
+{% extends "layout.html" %}
 
-  <main>
+{% block title %}Videos - The Golden Children{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='Videos.css') }}">
+{% endblock %}
+
+{% block content %}
     <section class="videos" aria-label="Video gallery">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/RUbmFMaZ7Vg" title="YouTube video player" style="border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/8T1jpt7vR0c" title="YouTube video player" style="border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
@@ -39,21 +20,4 @@
       <iframe width="560" height="315" src="https://www.youtube.com/embed/-QT0TaBjuzU" title="YouTube video player" style="border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/A6vR2KTzyHg" title="YouTube video player" style="border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
     </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>&copy; 2024 The Golden Children. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="AboutUs.html">About Us</a>
-      <span>•</span>
-      <a href="https://www.instagram.com/the__golden__children" target="_blank" rel="noopener noreferrer">Instagram</a>
-      <span>•</span>
-      <a href="https://www.twitter.com/TGoldenChildren" target="_blank" rel="noopener noreferrer">Twitter</a>
-      <span>•</span>
-      <a href="https://www.youtube.com/channel/UCsdoYGm3j91lvL0GWqCn2iw" target="_blank" rel="noopener noreferrer">YouTube</a>
-    </div>
-  </footer>
-
-  <script src="navigation.js"></script>
-</body>
-</html>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}Shop - The Golden Children{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='Shop.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section class="allclothes" aria-label="Product listings">
+      {% for product in products %}
+      <article class="card animate-on-scroll animate-child">
+        <img src="{{ url_for('static', filename=product.image) }}" alt="{{ product.name }}" width="100" height="100" style="object-fit: contain; margin-bottom: 1rem;">
+        <h1 style="margin: 0; font-size: 1.25rem;">{{ product.name }}</h1>
+        {% if product.price %}
+        <p style="margin-top: 0.5rem; font-weight: bold; color: var(--color-gold-dark);">{{ product.price }}</p>
+        {% endif %}
+      </article>
+      {% else %}
+        <!-- Fallback if no products passed yet (will be removed once dynamic shop is fully implemented) -->
+        <p>Loading products...</p>
+      {% endfor %}
+    </section>
+{% endblock %}
