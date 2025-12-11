@@ -7,4 +7,5 @@ echo Press Ctrl+C to stop the server
 echo.
 cd /d "%~dp0"
 pip install -r requirements.txt
+python init_db.py
 python app.py

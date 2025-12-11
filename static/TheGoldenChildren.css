@@ -371,3 +371,67 @@ main {
     display: none;
   }
 }
+
+/* ========================================
+   New Visual Components (Cards & Buttons)
+   ======================================== */
+
+/* Modern Card Component */
+.card {
+  background-color: var(--color-bg-primary);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-md);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl), var(--shadow-gold);
+}
+
+.card img {
+  border-radius: var(--border-radius-md);
+  transition: transform var(--transition-base);
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+/* Gold Button Component */
+.btn-gold {
+  display: inline-block;
+  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+  color: #1a1a1a;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #FFE44D 0%, #E5C158 100%);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+  transform: translateY(-2px);
+  color: #000;
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
