@@ -17,9 +17,10 @@ article {
   max-width: 800px;
   margin: 0 auto var(--spacing-xl, 3rem);
   padding: var(--spacing-lg, 2rem);
-  background: var(--color-bg-primary, #ffffff);
+  background: var(--color-bg-secondary, #1e1e1e);
   border-radius: var(--border-radius-lg, 1rem);
-  box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 215, 0, 0.1);
 }
 
 /* Styles the h1 within the article element */
@@ -36,7 +37,7 @@ article p {
   font-size: clamp(1rem, 2vw, 1.5rem);
   font-weight: 500;
   line-height: var(--line-height-base, 1.6);
-  color: var(--color-text-primary, #333333);
+  color: var(--color-text-primary, #e0e0e0);
 }
 
 /* Resizes the pictures for the logo images */
@@ -62,9 +63,9 @@ article p {
   padding: var(--spacing-lg, 2rem);
   list-style-type: none;
   border-radius: var(--border-radius-xl, 1.5rem);
-  background: var(--color-bg-primary, #ffffff);
-  box-shadow: var(--shadow-lg, 0 10px 15px rgba(0, 0, 0, 0.1));
-  border: 2px solid rgba(255, 215, 0, 0.1);
+  background: var(--color-bg-secondary, #1e1e1e);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 215, 0, 0.1);
 }
 
 /* Styles the heading in socials */
