@@ -9,39 +9,49 @@
   <meta property="og:title" content="The Golden Children">
   <meta property="og:description" content="A group of young men who strive for excellence. We set the golden standard.">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="TheGoldenChildren.css">
-  <link rel="stylesheet" href="clock.css">
+
+  <link rel="stylesheet" href="static/TheGoldenChildren.css">
+  <link rel="stylesheet" href="static/nav.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@500&display=swap" rel="stylesheet">
+
   <title>The Golden Children - Home</title>
+
+  <link rel="stylesheet" href="static/clock.css">
 </head>
 <body>
   <header>
-    <a href="index.html" class="logo-link">
-      <img src="Gold wo 1blur.png" alt="The Golden Children Logo" class="center">
-    </a>
-    
-    <nav class="nav" aria-label="Main navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="Shop.html">Shop</a></li>
-        <li><a href="Videos.html">Videos</a></li>
-        <li><a href="Music.html">Music</a></li>
-        <li><a href="AboutUs.html">About Us</a></li>
-      </ul>
-    </nav>
+    <div class="header-container">
+      <a href="index.html" class="logo-link">
+        <img src="static/gold-wo-1blur.png" alt="The Golden Children Logo" class="center">
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+
+      <nav class="nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Shop.html">Shop</a></li>
+          <li><a href="Videos.html">Videos</a></li>
+          <li><a href="Music.html">Music</a></li>
+          <li><a href="AboutUs.html">About Us</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero animate-on-scroll">
       <h1 class="hero-title">Welcome to The Golden Children</h1>
       <p class="hero-text">
         A group of young men who strive for excellence. We set the <span class="golden-highlight">GOLDEN STANDARD</span>.
       </p>
     </section>
     
-    <div class="clock" role="timer" aria-live="polite">
+    <div class="clock animate-on-scroll" role="timer" aria-live="polite">
       <span class="clock-time"></span>
       <span class="clock-ampm"></span>
     </div>
@@ -60,7 +70,7 @@
     </div>
   </footer>
 
-  <script src="navigation.js"></script>
-  <script src="clock.js"></script>
+  <script src="static/navigation.js"></script>
+  <script src="static/clock.js"></script>
 </body>
 </html>

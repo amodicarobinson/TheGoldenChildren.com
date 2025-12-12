@@ -6,11 +6,11 @@
   --color-gold-primary: #FFD700;
   --color-gold-dark: #D4AF37;
   --color-gold-light: #FFF8DC;
-  --color-bg-primary: #ffffff;
-  --color-bg-secondary: #f8f9fa;
-  --color-bg-dark: #1a1a1a;
-  --color-text-primary: #333333;
-  --color-text-secondary: #666666;
+  --color-bg-primary: #121212;
+  --color-bg-secondary: #1e1e1e;
+  --color-bg-dark: #000000;
+  --color-text-primary: #e0e0e0;
+  --color-text-secondary: #b0b0b0;
   --color-text-light: #ffffff;
   
   /* Spacing */
@@ -63,7 +63,7 @@
 }
 
 body {
-  background-color: #ffffff;
+  background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
   font-family: var(--font-family-body);
   font-size: var(--font-size-base);
@@ -370,4 +370,175 @@ main {
   .nav {
     display: none;
   }
+}
+
+/* ========================================
+   New Visual Components (Cards & Buttons)
+   ======================================== */
+
+/* Modern Card Component */
+.card {
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-md);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl), var(--shadow-gold);
+}
+
+.card img {
+  border-radius: var(--border-radius-md);
+  transition: transform var(--transition-base);
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+/* Gold Button Component */
+.btn-gold {
+  display: inline-block;
+  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+  color: #1a1a1a;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #FFE44D 0%, #E5C158 100%);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+  transform: translateY(-2px);
+  color: #000;
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delay for child elements (like cards) */
+.animate-child:nth-child(1) { transition-delay: 0.1s; }
+.animate-child:nth-child(2) { transition-delay: 0.2s; }
+.animate-child:nth-child(3) { transition-delay: 0.3s; }
+.animate-child:nth-child(4) { transition-delay: 0.4s; }
+.animate-child:nth-child(5) { transition-delay: 0.5s; }
+.animate-child:nth-child(6) { transition-delay: 0.6s; }
+
+/* ========================================
+   Hero Polish
+   ======================================== */
+.hero {
+  background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1) 0%, rgba(255, 255, 255, 0) 70%),
+              repeating-linear-gradient(45deg, rgba(0,0,0,0.02) 0px, rgba(0,0,0,0.02) 2px, transparent 2px, transparent 10px);
+  padding: var(--spacing-xxl) var(--spacing-lg);
+  border-radius: var(--border-radius-xl);
+  margin-bottom: var(--spacing-xxl);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.05) 0%, transparent 60%);
+  animation: rotate 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Dark Mode Form Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  background-color: #2c2c2c;
+  border: 1px solid #444;
+  color: #fff;
+  border-radius: var(--border-radius-sm);
+  padding: 0.75rem;
+  width: 100%;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-gold-primary);
+  box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+}
+
+label {
+  color: var(--color-gold-primary);
+}
+
+/* Dark Mode Tables */
+table {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+}
+
+th {
+  background-color: #333;
+  color: var(--color-gold-primary);
+  border-bottom: 1px solid #444;
+}
+
+td {
+  border-bottom: 1px solid #333;
 }

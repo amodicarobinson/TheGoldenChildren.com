@@ -1,0 +1,23 @@
+/* Shop Layout */
+.allclothes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Ensure images don't overflow */
+.card img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 768px) {
+  .allclothes {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: var(--spacing-md);
+  }
+}
