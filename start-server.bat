@@ -6,6 +6,10 @@ echo.
 echo Press Ctrl+C to stop the server
 echo.
 cd /d "%~dp0"
+<<<<<<< HEAD
+python -m http.server 8000
+=======
 pip install -r requirements.txt
 python init_db.py
 python app.py
+>>>>>>> origin/Main
