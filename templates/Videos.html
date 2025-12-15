@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Videos.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,8 +43,17 @@
       </nav>
     </div>
   </header>
+=======
+{% extends "layout.html" %}
+>>>>>>> origin/Main:templates/Videos.html
 
-  <main>
+{% block title %}Videos - The Golden Children{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='Videos.css') }}">
+{% endblock %}
+
+{% block content %}
     <section class="videos" aria-label="Video gallery">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/RUbmFMaZ7Vg" title="YouTube video player" style="border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/8T1jpt7vR0c" title="YouTube video player" style="border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
@@ -57,6 +67,7 @@
       <iframe width="560" height="315" src="https://www.youtube.com/embed/-QT0TaBjuzU" title="YouTube video player" style="border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/A6vR2KTzyHg" title="YouTube video player" style="border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
     </section>
+<<<<<<< HEAD:Videos.html
   </main>
 
   <footer class="site-footer">
@@ -75,3 +86,6 @@
   <script src="static/navigation.js"></script>
 </body>
 </html>
+=======
+{% endblock %}
+>>>>>>> origin/Main:templates/Videos.html

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}The Golden Children - Home{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='clock.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section class="hero animate-on-scroll">
+      <h1 class="hero-title">Welcome to The Golden Children</h1>
+      <p class="hero-text">
+        A group of young men who strive for excellence. We set the <span class="golden-highlight">GOLDEN STANDARD</span>.
+      </p>
+    </section>
+
+    <div class="clock animate-on-scroll" role="timer" aria-live="polite">
+      <span class="clock-time"></span>
+      <span class="clock-ampm"></span>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{{ url_for('static', filename='clock.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}Login - The Golden Children{% endblock %}
+
+{% block content %}
+<section style="max-width: 400px; margin: 3rem auto; padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <h1 class="centered" style="margin-bottom: 2rem; color: #FFD700;">Login</h1>
+
+    <form method="POST">
+        <div style="margin-bottom: 1rem;">
+            <label for="username" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Username</label>
+            <input type="text" name="username" id="username" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 0.5rem;">
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+            <label for="password" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Password</label>
+            <input type="password" name="password" id="password" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 0.5rem;">
+        </div>
+
+        <button type="submit" class="btn-gold" style="width: 100%;">Login</button>
+    </form>
+</section>
+{% endblock %}
