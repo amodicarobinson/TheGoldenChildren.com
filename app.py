@@ -58,10 +58,6 @@ def shop():
 def videos():
     return render_template('Videos.html')
 
-@app.route('/music')
-def music():
-    return render_template('Music.html')
-
 @app.route('/about', methods=['GET', 'POST'])
 def about():
     if request.method == 'POST':
